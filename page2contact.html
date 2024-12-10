@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evelyne_Lecardeur_Portfolio</title>
+    <link rel="stylesheet" href="mise en page.css">
+    <script src="script.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+      <header>
+        <div class="entete">
+           <img src="Images/Logo complet.png"alt="Logo">
+       </div>
+           <nav id="menu">
+               <button><img src="Images/Burger.png"></button>
+               <ul>
+                   <li><a href="index.html">Accueil</a></li>
+                   <li><a href="page1portfolio.html">Réalisations</a></li> 
+                   <li><a href="page2contact.html">Contact</a></li>      
+               </ul>
+           </nav>
+       </header>
+   
+        <div class="image-bandeau">
+            <img src="Images/Motif.png"alt="motif de présentation">
+       </div>
+   
+        <div><h1 class="titre">Me contacter</h1></div>
+
+        <div class="conteneur-contact">
+             <form action="contact.php" class="contact-form">
+
+                    <label for="firstname"></label>
+                    <input type="text" required id="firstname" name="firstname" placeholder="Votre nom">
+                 
+                    <label for="email"></label>
+                    <input type="email" required id="email" name="email" placeholder=" Votre email">
+                
+                    <label for="message"></label>
+                    <textarea name="message" required id="message" cols="106" rows="10" placeholder="Votre message"></textarea>
+        
+                    <input type="submit" class="btn" value="Envoyer">
+    
+             </form>
+     </div>
+
+     <footer>
+        <div><a href=""> Mentions Légales </a></div>
+        <div>Copyright @ Paware studio graphique</div>
+        
+    </footer>
+</body>
+</html>

@@ -1,0 +1,333 @@
+/* palette de couleurs
+blanc cassé #F2F0E8
+Orange #ff6c3c
+Doré #A99257
+Brun #c2af97
+*/
+
+body {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-size: 18px;
+  padding: 36px;
+  font-style: normal;
+  background-color: white;
+}
+
+p {
+  text-align: justify;
+}
+/******* MENU *******/
+ 
+.entete {
+  display: flex;
+  align-self: center;
+  max-width: 200px;
+  max-height: 250px;
+  margin-bottom: 55px;
+}
+
+header {
+display: flex;
+padding-block: 50px;
+justify-content: space-evenly;
+flex-direction: column;
+}
+
+nav {
+  position:relative;
+}
+
+nav ul {
+  list-style-type: none;
+  display:flex;
+ /* justify-content: space-evenly;*/
+  margin-left: 120px;
+  margin-right: 120px;
+  gap: 100px;
+  font-size: larger;
+}
+nav a {
+  color: #c2af97;
+  text-decoration: none;
+}
+
+li {
+  margin: 0 15px;
+  position: relative; 
+}
+
+li::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #ff6c3c; 
+  transition: width 0.3s ease; 
+}
+
+li:hover::after {
+  width: 100%; 
+}
+
+nav a:hover{  
+  font-weight: bold;
+  text-transform:uppercase ;
+}
+
+.image-bandeau img{
+  display: block;
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  /*border-top-style:solid;
+  border-color: #EA5658;*/
+ }
+
+
+h1 {
+  color:#ff6c3c;
+ }
+ 
+/*** RESPONSIVE MENU ***/
+
+#menu button  {
+  width: 12%;
+  flex-shrink: 0;
+  background-color: transparent;
+  border:none;
+  display: none;
+  transition:margin-top 0.5s; 
+  }
+  
+  #menu button img {
+      width:100%;
+  }
+  button {
+      display: none; /* par defaut. car il doit apparaite sous le seuil des 800px*/
+  }
+  
+  #menu ul {
+     
+      display: flex;
+      padding-block: 50px;
+      justify-content: space-evenly;
+  }
+  
+
+  #menu.visible ul {
+      display:flex;  /*pour annuler display none, donc le masquage*/
+  }
+  
+  #menu a {
+      color:#c2af97;
+      font-size: larger;
+      text-decoration:none;
+  }
+
+@media screen and (max-width:800px){
+
+  #menu ul {
+      display: none;
+      flex-direction: column;
+      margin: 20px 0px ; 
+  }   
+
+  #menu button  {
+      display:block;
+       }
+       
+  #menu.visible button{
+      margin-top:5px;
+  }
+
+  }
+
+
+/******* INDEX  PAGE ACCUEIL*******/
+
+.container-presentation {
+  display:flex;
+  gap:30px;
+}
+
+.colonne {
+  width:100%;
+  text-align: justify;
+}
+
+.colonne  img {
+  align-items: center;
+  width:60%;
+  height: auto;
+}
+
+.demi {
+  width:50%;
+}
+
+.exergue {
+  color:#ff6c3c ;
+}
+
+/*** RESPONSIVE PAGE ACCUEIL ***/
+
+@media screen and (max-width:800px) {
+  .colonne img {
+    display: none;
+  }
+  .container-presentation {
+      flex-wrap:wrap;
+  }
+  .entete {
+    display:none;
+  }
+}
+
+@media screen and (max-width:500px) {
+
+.seuil-500 {
+width: 100%;
+  }
+
+.image-bandeau {
+  display: none;
+}
+}
+
+/*******  PAGE 1 - PORTFOLIO *******/
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin: 120px;
+}
+
+.introduction-projets {
+  margin-bottom: 30px;
+}
+
+.conteneur_image {
+  width: calc(100%/3 - 60px/3);
+  position:relative;
+  overflow:hidden;
+}
+
+img {
+  width: 100%;
+  height:100%;
+  object-fit:cover;
+  vertical-align: middle;
+  transition:filter 0.5s, transform 0.5s;
+}
+
+ .legendetitre {
+  position: absolute;
+  bottom:0;  /*en bas de son élément parent,l'image*/
+  width:100%; /* 100% de son conteneur*/
+  height:70%;
+  background-color:#c2af97;
+  color:white;
+  font-size: 0.8em;
+  padding: 10px;
+  box-sizing: border-box; 
+  transform:translateY(100%);
+  transition:transform 0.5s;
+  background-color 0.5s , 0.5s ; 
+} 
+
+.conteneur_image:hover  .legendetitre {
+ transform:translateY(0);
+ background-color: #ff6c3c ;
+ color: white;
+}
+
+
+/******* PAGE 2 CONTACT *******/
+
+.titre {
+  text-align: center;
+  margin-top: 120px;
+}
+
+
+.conteneur-contact {
+margin-left: 120px;
+margin-right: 120px;
+padding: 20px;
+border-radius: 8px;
+}
+
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+ justify-content: center;
+  align-items: center;
+}
+
+.contact-form label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+  margin: 40px;
+  padding: 10px;
+  border: 1px solid #A99257;
+  border-radius: 4px;
+  font-size: 14px;
+  width: 100%;
+
+}
+
+.contact-form textarea {
+  resize: none;
+  height: 200px;
+  display: block;
+  max-height: 500px;
+
+  }
+  
+
+.btn {
+  background-color:#c2af97 ;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.5em;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.btn:hover {
+  background-color: #ff6c3c;
+}
+
+
+/******* FOOTER *******/
+
+footer{
+  background-color:#c2af97;
+  color:#F2F0E8;
+  height: 80px;
+  list-style-type:none;
+  color: white;
+  text-align: center;
+  display:flex;
+  justify-content: space-evenly;
+  justify-items: center;
+  flex-direction: column;
+}
+
+footer  a {
+    text-decoration: none;
+    color:white;
+  }
+  
+ 
